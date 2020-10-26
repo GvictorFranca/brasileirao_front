@@ -1,0 +1,19 @@
+.Fixturies {
+  background-color: whitesmoke;
+  border-radius: 1rem;
+}
+
+.fixturies-header {
+  border-radius: 1rem;
+  height: 60px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  color: white;
+  background-color: green;
+  align-items: center;
+}
+
+.Fixturies > table {
+  padding: 2rem;
+}

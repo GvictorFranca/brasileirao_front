@@ -1,26 +1,31 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import "./App.css";
+import Header from "./components/Header";
+import Tabela from "./components/Tabela";
+import Fixturies from "./components/Fixturies";
+import { AtualizarProvider, AtualizarContext } from "../src/helpers/provider";
 
-function App() {
+export default function App() {
+  const [token, setToken] = React.useState(null);
+  const [loading, setLoading] = React.useState(false);
+  const [atualizarTabela, setAtualizarTabela] = React.useContext(
+    AtualizarContext
+  );
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      <Header
+        token={token}
+        setToken={setToken}
+        loading={loading}
+        setLoading={setLoading}
+      />
+      <div className="app-container">
+        <AtualizarProvider>
+          <Fixturies token={token} loading={loading} setLoading={setLoading} />
+          <Tabela loading={loading} setLoading={setLoading} />
+        </AtualizarProvider>
+      </div>
     </div>
   );
 }
-
-export default App;

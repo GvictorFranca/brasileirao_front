@@ -1,0 +1,17 @@
+.Tabela {
+  text-align: center;
+  width: 10rem;
+  padding-left: 6rem;
+}
+
+.Tabela > table {
+  background-color: whitesmoke;
+
+  border-radius: 1rem;
+  padding: 2rem;
+}
+
+.Tabela > table > thead {
+  color: white;
+  background-color: green;
+}
